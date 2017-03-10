@@ -1,0 +1,13 @@
+{
+    "extends": ["airbnb-base", "hapi"],
+    "plugins": [
+        "import",
+        "hapi"
+    ],
+    "parserOptions": {
+        "sourceType": "script"
+    },
+    "rules": {
+        "requirePaddingNewLinesAfterBlocks": true
+    }
+}

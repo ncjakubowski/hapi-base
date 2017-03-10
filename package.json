@@ -1,0 +1,24 @@
+{
+  "name": "api_platform_hapi",
+  "version": "1.0.0",
+  "description": "API Platform",
+  "private": "true",
+  "main": "server.js",
+  "scripts": {
+    "test": "lab"
+  },
+  "author": "Accenture",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.0"
+  },
+  "devDependencies": {
+    "code": "^4.0.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-config-hapi": "^10.0.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "lab": "^12.1.0"
+  }
+}
