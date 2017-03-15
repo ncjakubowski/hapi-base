@@ -7,14 +7,20 @@ const describe = lab.describe;
 const it = lab.it;
 const before = lab.before;
 const expect = Code.expect;
+const Index = require('../../index');
 
 let server;
 
 describe('Routes /todo', () => {
     before((done) => {
-        require('../../index')((err, srv) => {
+        Index((err, srv) => {
+            if (err) {
+                console.log('error in require: ', err);
+            }
             server = srv;
         });
+
+
         const options = {
             method: 'GET',
             url: '/'
@@ -33,6 +39,7 @@ describe('Routes /todo', () => {
             };
             server.inject(options, (response) => {
                 expect(response).to.include({ statusCode: 200 });
+                expect(response.result).to.equal('Server up!');
                 done();
             });
         });
