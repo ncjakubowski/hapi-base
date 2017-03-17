@@ -7,15 +7,15 @@ const describe = lab.describe;
 const it = lab.it;
 const before = lab.before;
 const expect = Code.expect;
-const Index = require('../../index');
+const ServerObject = require('../../index');
 
 let server;
 
-describe('Routes /todo', () => {
+describe('Routes /', () => {
     before((done) => {
-        Index((err, srv) => {
+        ServerObject((err, srv) => {
             if (err) {
-                console.log('error in require: ', err);
+                console.log('error when creating server instance: ', err);
             }
             server = srv;
         });
@@ -38,7 +38,7 @@ describe('Routes /todo', () => {
                 url: '/'
             };
             server.inject(options, (response) => {
-                expect(response).to.include({ statusCode: 200 });
+                expect(response.statusCode).to.equal(200);
                 expect(response.result).to.equal('Server up!');
                 done();
             });
