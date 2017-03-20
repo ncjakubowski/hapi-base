@@ -5,7 +5,10 @@
 module.exports = [{
     method: 'GET',
     path: '/',
-    handler: function (request, reply) {
-        reply('Server up!');
+    config: {
+        handler: function (request, reply) {
+            reply('Server up!');
+        },
+        tags: ['api']
     }
 }];

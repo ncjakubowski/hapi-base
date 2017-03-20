@@ -10,7 +10,10 @@
   "author": "Accenture",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^16.1.0"
+    "hapi": "^16.1.0",
+    "hapi-swagger": "^7.7.0",
+    "inert": "^4.1.0",
+    "vision": "^4.1.1"
   },
   "devDependencies": {
     "code": "^4.0.0",
