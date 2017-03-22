@@ -11,31 +11,12 @@ Server((err, server) => {
         throw err;
     }
 
-    const options = {
-        info: {
-            title: 'API Platform Documentation',
-            version: Pack.version
-        }
-    };
-
-    server.register([
-        Inert,
-        Vision,
-        {
-            register: HapiSwagger,
-            options
-        }], (err) => {
-        server.start((err) => {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log('Server running at:', server.info.uri);
-            }
-        });
-    });
-
     server.start((err) => {
-
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log('Server running at:', server.info.uri);
+        }
     });
 });
